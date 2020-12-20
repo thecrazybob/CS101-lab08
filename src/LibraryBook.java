@@ -43,10 +43,10 @@ public class LibraryBook {
      * Loans a book (increments timesLoaned and changes dueDate)
      * @return void
      */
-    public void loanBook() {
+    public void loanBook(String date) {
 
         timesLoaned += 1;
-        dueDate = "22.12.2020";
+        dueDate = date;
 
     }
 
@@ -115,7 +115,7 @@ public class LibraryBook {
      */
     public boolean hasSameTitle(LibraryBook comparisonObject) {
         
-        if (title == comparisonObject.title) {
+        if (this.title == comparisonObject.title) {
             return true;
         }
         else {
@@ -132,7 +132,7 @@ public class LibraryBook {
      */
     public boolean hasSameAuthor(LibraryBook comparisonObject) {
         
-        if (author == comparisonObject.author) {
+        if (this.author == comparisonObject.author) {
             return true;
         }
         else {
