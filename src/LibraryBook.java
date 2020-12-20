@@ -18,12 +18,24 @@ public class LibraryBook {
     /** 
      * Constructor for LibraryBook with initialization of the LibraryBook object's data
      */
-    public LibraryBook() {
+    public LibraryBook(String bookName, String bookAuthor, String bookDueDate) {
 
-        title = "The art of living : the classic manual on virtue, happiness, and effectiveness";
-        author = "Epictetus.";
-        dueDate = "12.12.2020";
+        title = bookName;
+        author = bookAuthor;
+        dueDate = bookDueDate;
         timesLoaned = 0;
+    
+    }
+
+    /** 
+     * Copy Constructor
+     */
+    public LibraryBook(LibraryBook objectToBeCopied) {
+
+        title = objectToBeCopied.title;
+        author = objectToBeCopied.author;
+        dueDate = objectToBeCopied.dueDate;
+        timesLoaned = objectToBeCopied.timesLoaned;
     
     }
 
@@ -79,4 +91,54 @@ public class LibraryBook {
         return "title: " + title + " author: " + author + " dueDate: " + dueDate + " timesLoaned: " + timesLoaned;
     
     }
+
+    
+    /** 
+     * Evaluates if the title and author of the current instance of LibraryBook matches the input object
+     * @param comparisonObject
+     * @return boolean
+     */
+    public boolean equals(LibraryBook comparisonObject) {
+        if (title == comparisonObject.title && author == comparisonObject.author) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+    
+    /** 
+     * Evaluates if the current and the comparisonObject has the same title
+     * @param comparisonObject
+     * @return boolean
+     */
+    public boolean hasSameTitle(LibraryBook comparisonObject) {
+        
+        if (title == comparisonObject.title) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
+    
+    /** 
+     * Evaluates if the current and the comparisonObject has the same author
+     * @param comparisonObject
+     * @return boolean
+     */
+    public boolean hasSameAuthor(LibraryBook comparisonObject) {
+        
+        if (author == comparisonObject.author) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    }
+
 }
